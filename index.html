@@ -1,0 +1,218 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>الي my prother</title>
+    <style>
+        body {
+            margin: 0;
+            font-family: 'Arial', sans-serif;
+            background-color: #fce4ec;
+            min-height: 100vh;
+            display: flex;
+            justify-content: center;
+            align-items: flex-start;
+            overflow-y: auto;
+            position: relative;
+            padding: 20px 0;
+        }
+
+        /* مطر الاحتفالات */
+        .falling-item {
+            position: fixed;
+            top: -10%;
+            user-select: none;
+            pointer-events: none;
+            animation: fallDown linear forwards;
+            z-index: 5;
+        }
+        @keyframes fallDown {
+            to { transform: translateY(110vh) rotate(360deg); opacity: 0; }
+        }
+
+        /* صندوق الدخول */
+        .container {
+            background: rgba(255, 255, 255, 0.95);
+            padding: 40px;
+            border-radius: 25px;
+            box-shadow: 0 15px 35px rgba(0,0,0,0.1);
+            text-align: center;
+            width: 90%;
+            max-width: 400px;
+            position: relative;
+            z-index: 100;
+            backdrop-filter: blur(5px);
+            transition: all 0.5s;
+            margin-top: 10vh;
+        }
+        .hidden { display: none !important; }
+
+        h2 { color: #ad1457; font-size: 26px; margin-bottom: 10px; }
+        .hint { color: #888; font-size: 14px; margin-bottom: 25px; }
+        
+        input {
+            width: 100%;
+            padding: 15px;
+            border-radius: 30px;
+            border: 2px solid #f48fb1;
+            text-align: center;
+            font-size: 18px;
+            margin-bottom: 20px;
+            outline: none;
+        }
+
+        button {
+            width: 100%;
+            padding: 15px;
+            background: linear-gradient(45deg, #d81b60, #f06292);
+            color: white;
+            border: none;
+            border-radius: 30px;
+            cursor: pointer;
+            font-size: 18px;
+            font-weight: bold;
+        }
+
+        /* منطقة المفاجأة */
+        #surprise {
+            display: none;
+            flex-direction: column;
+            justify-content: flex-start;
+            align-items: center;
+            z-index: 10;
+            text-align: center;
+            width: 95%;
+            max-width: 600px;
+            padding: 20px;
+            animation: fadeIn 1s ease-in;
+        }
+        @keyframes fadeIn { from { opacity: 0; } to { opacity: 1; } }
+
+        .photo-frame {
+            width: 250px; 
+            height: 250px;
+            border: 8px solid white;
+            border-radius: 50%;
+            box-shadow: 0 0 30px rgba(216, 27, 96, 0.3);
+            overflow: hidden;
+            animation: heartBeat 1.5s infinite;
+            margin-bottom: 30px;
+            background: #fff;
+            flex-shrink: 0;
+        }
+        .photo-frame img { 
+            width: 100%; 
+            height: 100%; 
+            object-fit: cover; 
+            transition: opacity 0.8s ease-in-out; 
+        }
+
+        @keyframes heartBeat {
+            0% { transform: scale(1); }
+            50% { transform: scale(1.05); }
+            100% { transform: scale(1); }
+        }
+
+        .love-text {
+            color: #4a148c;
+            font-size: 19px;
+            font-weight: bold;
+            line-height: 2;
+            background: rgba(255, 255, 255, 0.9);
+            padding: 30px;
+            border-radius: 25px;
+            box-shadow: 0 10px 25px rgba(0,0,0,0.1);
+            white-space: pre-line;
+            border: 2px solid #f48fb1;
+        }
+        .main-title {
+            color: #d81b60;
+            font-size: 30px;
+            margin-bottom: 20px;
+            display: block;
+            text-shadow: 1px 1px 2px rgba(0,0,0,0.1);
+        }
+
+    </style>
+</head>
+<body>
+
+    <audio id="birthdaySong" src="music.mp3" loop></audio>
+
+    <div class="container" id="loginBox">
+        <h2>أهلاً  ❤️</h2>
+        <p class="hint">عشان تشوف المفاجأة.. الباسورد هو تاريخ ميلادك 🎂</p>
+        <input type="text" id="passInput" placeholder="اكتبي التاريخ هنا..." maxlength="8">
+        <button onclick="check()">افتح/ي المفاجأة ✨</button>
+    </div>
+
+    <div id="surprise">
+        <div class="photo-frame">
+            <img src="1.jpg" id="mainPhoto" onerror="this.src='https://via.placeholder.com/250/d81b60/ffffff?text=Happy+Birthday'">
+        </div>
+        <div class="love-text">
+            <span class="main-title"> ربنا يحفظك</span>
+       في زحام هذا العالم الموحش، وفي ركض الأيام الذي لا ينتهي، يتوقف الزمن فجأة عند لحظة واحدة.. اللحظة التي أدرك فيها كل منكما أنه لم يعد وحيداً.
+
+الحب ليس مجرد كلمات تُقال في لحظات الرضا، بل هو ذلك الأمان الخفي الذي تشعر به حين يضيق بك الكون، فتجد في قلب الآخر متسعاً يبتلع أحزانك ويحولها إلى سكينة. أن تنظر في عيني من تحب وترى مستقبلك، وترى أمانك، وترى الشخص الذي يتقبلك بكل انكساراتك وعيوبك، ويراك رغم كل شيء.. أجمل ما في الوجود.
+
+تذكرا دائماً أنكما لم تلتقيا صدفة؛ بل كانت الأقدار ترتب هذا اللقاء ليكون كل منكما ضماداً لجروح الآخر. إن الدموع التي قد تسقط الآن ليست إلا فيضاً من مشاعر صادقة عجز اللسان عن وصفها.. هي دموع الامتنان لأنكما وجدتُما بعضكما في زمنٍ عزَّ فيه الوفاء.
+
+لا تسمحا لغبار الأيام أن يطفئ بريق نظرتكما الأولى، ولا تجعلا عثرات الطريق تُفرق بين أيدٍ تعاهدت على ألا تفلت أبداً. الحب هو أن تخاف على جرحه أكثر من خوفك على جرحك، وأن يكون وجعه وجعك، وفرحه هو عيدك الوحيد.
+
+أنتما الآن لستما مجرد حبيبين، أنتما حكاية صمود، وقصة نماء، ووطن صغير بنيتماه بصدقكما. فحافظا على هذا الوطن، واجعلا من قلوبكما ملاذاً لا يصله ضجيج الخارج، وعيشا كل لحظة وكأنها البداية، بلهفة اللقاء الأول، وعمق العشرة الأخيرة
+        </div>
+    </div>
+
+    <script>
+        // دالة إنشاء مطر الأشكال
+        setInterval(createFallingItem, 150);
+
+        function createFallingItem() {
+            const item = document.createElement('div');
+            item.classList.add('falling-item');
+            const objects = ['🎂', '🎈', '🎉', '💖', '✨', '🎁', '🌸', '🍭'];
+            item.innerHTML = objects[Math.floor(Math.random() * objects.length)];
+            item.style.left = Math.random() * 100 + "vw";
+            item.style.fontSize = (Math.random() * 20 + 20) + "px";
+            item.style.animationDuration = (Math.random() * 3 + 4) + "s";
+            item.style.opacity = Math.random() * 0.7 + 0.3;
+            document.body.appendChild(item);
+            setTimeout(() => item.remove(), 7000);
+        }
+
+        function check() {
+            const val = document.getElementById('passInput').value;
+            // الباسورد المطلوب
+            if (val === "2782007") {
+                document.getElementById('loginBox').classList.add('hidden');
+                
+                // تشغيل الأغنية
+                const song = document.getElementById('birthdaySong');
+                song.play().catch(e => console.log("تحتاج لتفاعل المستخدم أولاً"));
+
+                setTimeout(() => {
+                    document.getElementById('surprise').style.display = 'flex';
+                    
+                    // تبديل 5 صور تلقائياً كل 3 ثواني
+                    let current = 1;
+                    setInterval(() => {
+                        current = (current % 5) + 1; 
+                        const photo = document.getElementById('mainPhoto');
+                        photo.style.opacity = 0; 
+                        setTimeout(() => {
+                            photo.src = current + ".jpg";
+                            photo.style.opacity = 1;
+                        }, 400);
+                    }, 3000);
+                }, 500);
+                
+                alert("صح! التاريخ اللي نور الدنيا ❤️🎉");
+            } else {
+                alert("الباسورد غلط! 😉");
+            }
+        }
+    </script>
+</body>
+</html>
