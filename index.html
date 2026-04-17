@@ -3,11 +3,11 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>الي my prother</title>
+    <title>إلى أغلى إنسانة</title>
     <style>
         body {
             margin: 0;
-            font-family: 'Arial', sans-serif;
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
             background-color: #fce4ec;
             min-height: 100vh;
             display: flex;
@@ -18,7 +18,6 @@
             padding: 20px 0;
         }
 
-        /* مطر الاحتفالات */
         .falling-item {
             position: fixed;
             top: -10%;
@@ -31,7 +30,6 @@
             to { transform: translateY(110vh) rotate(360deg); opacity: 0; }
         }
 
-        /* صندوق الدخول */
         .container {
             background: rgba(255, 255, 255, 0.95);
             padding: 40px;
@@ -48,8 +46,7 @@
         }
         .hidden { display: none !important; }
 
-        h2 { color: #ad1457; font-size: 26px; margin-bottom: 10px; }
-        .hint { color: #888; font-size: 14px; margin-bottom: 25px; }
+        h2 { color: #ad1457; font-size: 26px; margin-bottom: 25px; }
         
         input {
             width: 100%;
@@ -74,7 +71,6 @@
             font-weight: bold;
         }
 
-        /* منطقة المفاجأة */
         #surprise {
             display: none;
             flex-direction: column;
@@ -83,20 +79,20 @@
             z-index: 10;
             text-align: center;
             width: 95%;
-            max-width: 600px;
+            max-width: 650px;
             padding: 20px;
-            animation: fadeIn 1s ease-in;
+            animation: fadeIn 1.5s ease-in;
         }
         @keyframes fadeIn { from { opacity: 0; } to { opacity: 1; } }
 
         .photo-frame {
-            width: 250px; 
-            height: 250px;
-            border: 8px solid white;
+            width: 280px; 
+            height: 280px;
+            border: 10px solid white;
             border-radius: 50%;
-            box-shadow: 0 0 30px rgba(216, 27, 96, 0.3);
+            box-shadow: 0 0 30px rgba(216, 27, 96, 0.4);
             overflow: hidden;
-            animation: heartBeat 1.5s infinite;
+            animation: heartBeat 2s infinite;
             margin-bottom: 30px;
             background: #fff;
             flex-shrink: 0;
@@ -105,33 +101,36 @@
             width: 100%; 
             height: 100%; 
             object-fit: cover; 
-            transition: opacity 0.8s ease-in-out; 
+            transition: opacity 1s ease-in-out; 
         }
 
         @keyframes heartBeat {
             0% { transform: scale(1); }
-            50% { transform: scale(1.05); }
+            50% { transform: scale(1.03); }
             100% { transform: scale(1); }
         }
 
         .love-text {
             color: #4a148c;
-            font-size: 19px;
-            font-weight: bold;
-            line-height: 2;
-            background: rgba(255, 255, 255, 0.9);
+            font-size: 18px;
+            font-weight: 500;
+            line-height: 1.8;
+            background: rgba(255, 255, 255, 0.92);
             padding: 30px;
             border-radius: 25px;
             box-shadow: 0 10px 25px rgba(0,0,0,0.1);
             white-space: pre-line;
             border: 2px solid #f48fb1;
+            text-align: justify;
         }
         .main-title {
             color: #d81b60;
-            font-size: 30px;
-            margin-bottom: 20px;
+            font-size: 32px;
+            font-weight: bold;
+            margin-bottom: 15px;
             display: block;
             text-shadow: 1px 1px 2px rgba(0,0,0,0.1);
+            text-align: center;
         }
 
     </style>
@@ -141,38 +140,36 @@
     <audio id="birthdaySong" src="music.mp3" loop></audio>
 
     <div class="container" id="loginBox">
-        <h2>أهلاً  ❤️</h2>
-        <p class="hint">عشان تشوف المفاجأة.. الباسورد هو تاريخ ميلادك 🎂</p>
-        <input type="text" id="passInput" placeholder="اكتبي التاريخ هنا..." maxlength="8">
-        <button onclick="check()">افتح/ي المفاجأة ✨</button>
+        <h2>أهلاً يا ست البنات ❤️</h2>
+        <input type="text" id="passInput" placeholder="اكتبي الباسورد هنا..." maxlength="8">
+        <button onclick="check()">افتحي قلبي ✨</button>
     </div>
 
     <div id="surprise">
         <div class="photo-frame">
-            <img src="1.jpg" id="mainPhoto" onerror="this.src='https://via.placeholder.com/250/d81b60/ffffff?text=Happy+Birthday'">
+            <img src="1.jpg" id="mainPhoto">
         </div>
         <div class="love-text">
-            <span class="main-title"> ربنا يحفظك</span>
-       في زحام هذا العالم الموحش، وفي ركض الأيام الذي لا ينتهي، يتوقف الزمن فجأة عند لحظة واحدة.. اللحظة التي أدرك فيها كل منكما أنه لم يعد وحيداً.
+            <span class="main-title">وحشتيني يا إسراء</span>
+بصراحة يا حبيبتي… أنا مش عارف أبدأ منين، بس كل اللي عايز أقوله إنك وحشتيني بشكل كبير أوي، أكتر ما تتخيلي. الفترة اللي فاتت دي كانت صعبة عليا، كنت بحاول أبان عادي وكأني متعود على غيابك… بس الحقيقة إني كنت حاسس إن في حاجة ناقصة مني طول الوقت.
 
-الحب ليس مجرد كلمات تُقال في لحظات الرضا، بل هو ذلك الأمان الخفي الذي تشعر به حين يضيق بك الكون، فتجد في قلب الآخر متسعاً يبتلع أحزانك ويحولها إلى سكينة. أن تنظر في عيني من تحب وترى مستقبلك، وترى أمانك، وترى الشخص الذي يتقبلك بكل انكساراتك وعيوبك، ويراك رغم كل شيء.. أجمل ما في الوجود.
+كنت دايمًا بفتكر كلامنا، ضحكنا، وكل حاجة كانت بينا… والحاجات دي كانت بتوجعني على قد ما كانت بتفرحني. حاولت أقنع نفسي إن عادي، بس إنتي عمرك ما كنتي حاجة عادية في حياتي أصلاً.
 
-تذكرا دائماً أنكما لم تلتقيا صدفة؛ بل كانت الأقدار ترتب هذا اللقاء ليكون كل منكما ضماداً لجروح الآخر. إن الدموع التي قد تسقط الآن ليست إلا فيضاً من مشاعر صادقة عجز اللسان عن وصفها.. هي دموع الامتنان لأنكما وجدتُما بعضكما في زمنٍ عزَّ فيه الوفاء.
+ولما رجعنا نتكلم تاني… حسيت إن في حاجة جوايا رجعت للحياة. إحساس الأمان اللي بيرجع مع كلامك، والراحة اللي بحسها وأنا معاكي، خلوني أتأكد إن مفيش حد قدر ياخد مكانك.
 
-لا تسمحا لغبار الأيام أن يطفئ بريق نظرتكما الأولى، ولا تجعلا عثرات الطريق تُفرق بين أيدٍ تعاهدت على ألا تفلت أبداً. الحب هو أن تخاف على جرحه أكثر من خوفك على جرحك، وأن يكون وجعه وجعك، وفرحه هو عيدك الوحيد.
+أنا مش عايز نرجع نغلط نفس الغلطات تاني، ولا نضيع من بعض بسهولة كده. أنا عايز المرة دي نبقى أهدى، نفهم بعض أكتر، ونتمسك ببعض بجد.
 
-أنتما الآن لستما مجرد حبيبين، أنتما حكاية صمود، وقصة نماء، ووطن صغير بنيتماه بصدقكما. فحافظا على هذا الوطن، واجعلا من قلوبكما ملاذاً لا يصله ضجيج الخارج، وعيشا كل لحظة وكأنها البداية، بلهفة اللقاء الأول، وعمق العشرة الأخيرة
+أنا لسه بحبك… ويمكن أكتر من الأول كمان. وحشتيني بكل تفاصيلك، ومش عايز أخسرك تاني أبدًا.
         </div>
     </div>
 
     <script>
-        // دالة إنشاء مطر الأشكال
         setInterval(createFallingItem, 150);
 
         function createFallingItem() {
             const item = document.createElement('div');
             item.classList.add('falling-item');
-            const objects = ['🎂', '🎈', '🎉', '💖', '✨', '🎁', '🌸', '🍭'];
+            const objects = ['💖', '✨', '🌸', '🌹', '❤️'];
             item.innerHTML = objects[Math.floor(Math.random() * objects.length)];
             item.style.left = Math.random() * 100 + "vw";
             item.style.fontSize = (Math.random() * 20 + 20) + "px";
@@ -184,18 +181,16 @@
 
         function check() {
             const val = document.getElementById('passInput').value;
-            // الباسورد المطلوب
-            if (val === "2782007") {
+            // الباسورد الجديد
+            if (val === "382007") {
                 document.getElementById('loginBox').classList.add('hidden');
                 
-                // تشغيل الأغنية
                 const song = document.getElementById('birthdaySong');
-                song.play().catch(e => console.log("تحتاج لتفاعل المستخدم أولاً"));
+                song.play().catch(e => console.log("تحتاج لتفاعل المستخدم"));
 
                 setTimeout(() => {
                     document.getElementById('surprise').style.display = 'flex';
                     
-                    // تبديل 5 صور تلقائياً كل 3 ثواني
                     let current = 1;
                     setInterval(() => {
                         current = (current % 5) + 1; 
@@ -204,11 +199,10 @@
                         setTimeout(() => {
                             photo.src = current + ".jpg";
                             photo.style.opacity = 1;
-                        }, 400);
-                    }, 3000);
+                        }, 1000);
+                    }, 4000);
                 }, 500);
                 
-                alert("صح! التاريخ اللي نور الدنيا ❤️🎉");
             } else {
                 alert("الباسورد غلط! 😉");
             }
